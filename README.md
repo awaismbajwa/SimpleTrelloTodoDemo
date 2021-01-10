@@ -1,13 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project, a simple one page todo application which uses [Trello](https://trello.com/) as backend.
 
-Trello board needs to be configured in environment file by providing api key, token, board id, open task list id and closed task list id.
+This application allows user to create a new card with name and description. Newly added card goes to the list of open tasks.
 
-This application allows user to create a new card with name and description.
-
-Newly added card goes to the list of open tasks. Once the task is finished, 
-
-the task card can be moved to the list of finished tasks.
-Application also allows removing the task card.
+Once the task is finished, the task card can be moved to the list of finished tasks. Application also allows removing the task card.
 
 ## Getting Started
 
@@ -32,7 +27,19 @@ Application contains only one api i.e. `/api/trello/[cardId].js`. This api is re
 
 CSS styles required by application are defined in `styles/` directory.
 
-Environment variables are defined in `.env.local` file.
+Before starting don't forget configuring trello in environment file. Environment variables are defined in `.env.local` file. You can create this file duplicating `.env.local.example` file and renaming it as `.env.local`. Trello board needs to be configured in environment file by providing api key, token, board id, open task list id and closed task list id.
+
+
+## Testing
+Once making the changes in the source, don't forget to test that your changes have not broken anything.
+For that purpose existing jest tests might become handy.
+Use the following command:
+
+```bash
+    npm run test
+```
+
+All the tests are placed in `tests/` root directory.
 
 ## Using Docker
 To start application in docker container first build the application service defined in `docker-compose.yml` file, using the following command:
