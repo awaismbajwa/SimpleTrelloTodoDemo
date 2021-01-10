@@ -1,4 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project, a simple one page todo application which uses [Trello](https://trello.com/) as backend.
+
+Trello board needs to be configured in environment file by providing api key, token, board id, open task list id and closed task list id.
+
+This application allows user to create a new card with name and description.
+
+Newly added card goes to the list of open tasks. Once the task is finished, 
+
+the task card can be moved to the list of finished tasks.
+Application also allows removing the task card.
 
 ## Getting Started
 
@@ -13,22 +22,33 @@ yarn dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The application contains only one page and that is defined in `pages/index.js`.
+React components used by main page are defined in `components/` directory.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/](http://localhost:3000/api/).
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Application contains only one api i.e. `/api/trello/[cardId].js`. This api is responsible in connecting react client with trello board.
 
-## Learn More
+CSS styles required by application are defined in `styles/` directory.
 
-To learn more about Next.js, take a look at the following resources:
+Environment variables are defined in `.env.local` file.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Using Docker
+To start application in docker container first build the application service defined in `docker-compose.yml` file, using the following command:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+docker-compose build
+```
 
-## Deploy on Vercel
+Then, start container by executing following command:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+docker-compose up
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To stop container, execute following command:
+
+```bash
+docker-compose down
+```
