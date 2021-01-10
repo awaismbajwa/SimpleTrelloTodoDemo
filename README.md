@@ -41,6 +41,17 @@ Use the following command:
 
 All the tests are placed in `tests/` root directory.
 
+## Testing
+Once making the changes in the source, don't forget to test that your changes have not broken anything.
+For that purpose existing jest tests might become handy.
+Use the following command:
+
+```bash
+    npm run test
+```
+
+All the tests are placed in `tests/` root directory.
+
 ## Using Docker
 To start application in docker container first build the application service defined in `docker-compose.yml` file, using the following command:
 
