@@ -1,0 +1,32 @@
+.card {
+    display: block;
+}
+
+.removeButton {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    height: 25px;
+    width: 25px;
+    border: none;
+    background-image: url('/delete.png');
+    background-size: 25px 25px;
+}
+
+
+.doneButton {
+    position: absolute;
+    right: 7px;
+    height: 30px;
+    top: 8px;
+    width: 25px;
+    border: none;
+    background-image: url('/done.png');
+    background-size: 30px 30px;
+    border-radius: 15px;
+    background-color: black;
+}
+
+.doneTask {
+    background-color: transparent;
+}

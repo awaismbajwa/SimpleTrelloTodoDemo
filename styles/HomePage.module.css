@@ -1,0 +1,60 @@
+.container {
+    box-sizing: border-box;
+}
+
+
+
+.navbar{
+    text-align: center;
+    height: 10vh;
+}
+
+.navbarLogo{
+    display: inline-block;
+    height: 100%;
+}
+
+.navbarLogoImage {
+    height: 95%;
+    margin-right: 10px;
+}
+
+.navbarLogo > h3 {
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+
+
+.main {
+    height: 85vh;
+}
+
+.tabs{
+    justify-content: center;
+    align-items: center;
+}
+
+.tab {
+    display: block;
+    height: 75vh;
+    margin-top: 25px;
+    overflow-y: scroll;
+    background: whitesmoke;
+}
+
+.tab li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 5px;
+}
+
+
+
+
+.footer {
+    color: white;
+    line-height: 6vh;
+    text-align: center;
+    border-top: 1px solid whitesmoke;
+}
