@@ -4,7 +4,6 @@ import Card from 'react-bootstrap/Card';
 import classNames from 'classnames';
 
 import styles from '../styles/TrelloCard.module.css';
-import Router from 'next/router'
 
 
 export default function TrelloCard({ isDone, card, refreshData }) {
@@ -59,20 +58,18 @@ export default function TrelloCard({ isDone, card, refreshData }) {
             style={{ width: '20rem' }}
             className={styles.card}
         >
-            <Card.Header style={{ minHeight: '45px' }}>
-                <button title='remove' className={styles.removeButton} onClick={() => removeTask(card)} />
-                <button title={isDone ? 'mark not done' : 'mark done'} onClick={() => updateTaskList(card)}
-                    className={classNames(styles.doneButton, { [styles.doneTask]: isDone })} />
+            <Card.Header>                
+                <Card.Title className={styles.cardTitle}>{card.name}</Card.Title>
             </Card.Header>
-            <Card.Body>
-                <Card.Title>{card.name}</Card.Title>
-                <Card.Text>
-                    {card.desc}
-                    <br />
-                    <hr />
-                    <a href={card.url} target='_blank' >Open in Trello</a>
-                </Card.Text>
+            <Card.Body className={styles.cardBody}>
+                {card.desc}
             </Card.Body>
+            <Card.Footer className={styles.footer}>
+                <button title='Remove' className={styles.removeButton} onClick={() => removeTask(card)} />
+                <button title='Open in Trello' className={styles.openInTrello} onClick={() => window.open(card.url, '_blank')} />
+                <button title={isDone ? 'Mark not done' : 'Mark done'} onClick={() => updateTaskList(card)}
+                    className={classNames(styles.doneButton, { [styles.doneTask]: isDone })} />
+            </Card.Footer>
         </Card>
     );
 }

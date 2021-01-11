@@ -41,16 +41,7 @@ Use the following command:
 
 All the tests are placed in `tests/` root directory.
 
-## Testing
-Once making the changes in the source, don't forget to test that your changes have not broken anything.
-For that purpose existing jest tests might become handy.
-Use the following command:
-
-```bash
-    npm run test
-```
-
-All the tests are placed in `tests/` root directory.
+Trello board needs to be configured for test environment as well, fill the appropriates values in `setupTests.js` file. 
 
 ## Using Docker
 To start application in docker container first build the application service defined in `docker-compose.yml` file, using the following command:

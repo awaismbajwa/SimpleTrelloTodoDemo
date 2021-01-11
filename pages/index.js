@@ -18,7 +18,6 @@ import { useRouter } from 'next/router';
 
 
 export default function HomePage({trelloBoard}) {
-
     const router = useRouter();
     
     const refreshData = () => {
@@ -78,7 +77,7 @@ export async function getServerSideProps() {
     let result = { props: { trelloBoard: {} } }
 
     let tasks = await TrelloAPI.getBoardTasks();
-    if (tasks) {
+    if (tasks && !tasks.errorMessage) {
         result.props.trelloBoard = tasks;
     }
     else{

@@ -1,11 +1,9 @@
-import * as TrelloNodeAPI from 'trello-node-api';
+import TrelloNodeAPI from 'trello-node-api';
 
 
 export let TrelloAPI = {
     authorize: function () {
-        this.trelloConnection = new TrelloNodeAPI();
-        this.trelloConnection.setApiKey(process.env.TRELLO_API_KEY);
-        this.trelloConnection.setOauthToken(process.env.TRELLO_TOKEN);
+        this.trelloConnection = TrelloNodeAPI(process.env.TRELLO_API_KEY, process.env.TRELLO_TOKEN);
     },
     getBoardTasks: async function () {
         if (!this.trelloConnection) {
@@ -22,6 +20,7 @@ export let TrelloAPI = {
             if (error) {
                 console.log('error ', error);
             }
+            result.errorMessage = error.message;
         }
         if (response) {
             result.tasks = response.filter(card => {

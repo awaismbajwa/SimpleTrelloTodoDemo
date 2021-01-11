@@ -2,10 +2,19 @@
     display: block;
 }
 
+.cardTitle{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 20px;
+    text-align: center;
+}
+
+
 .removeButton {
     position: absolute;
     left: 5px;
-    top: 10px;
+    bottom: 5px;
     height: 25px;
     width: 25px;
     border: none;
@@ -14,19 +23,41 @@
 }
 
 
+.openInTrello {
+    display: block;
+    margin: -5px auto 0 auto;
+    height: 25px;
+    width: 25px;
+    border: none;
+    background-image: url('/share.svg');
+    background-size: 25px 25px;
+}
+
+
 .doneButton {
     position: absolute;
-    right: 7px;
+    right: 5px;
     height: 30px;
-    top: 8px;
+    bottom: 5px;
     width: 25px;
     border: none;
     background-image: url('/done.png');
     background-size: 30px 30px;
     border-radius: 15px;
-    background-color: black;
+    background-color: transparent;
 }
 
 .doneTask {
-    background-color: transparent;
+    background-color: black;
+}
+
+.cardBody{
+    height: 90px;
+    overflow-y: scroll;
+    padding: 0.7rem !important;
+    line-height: 18px;
+}
+
+.footer{
+    height: 40px;
 }
